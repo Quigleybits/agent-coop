@@ -1,0 +1,68 @@
+[build-system]
+# Pin the backend so wheel and sdist metadata are reproducible in CI.
+# Version 82.0.1 supports the PEP 639 license fields.
+requires = ["setuptools==82.0.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-coop"
+version = "0.1.0"
+description = "Local multi-agent coordination protocol for terminal coding agents"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+authors = [{ name = "Quigleybits" }]
+keywords = ["agents", "coordination", "protocol", "multi-agent", "cli", "sqlite"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development :: Quality Assurance",
+]
+# The runtime is stdlib-only. Adding a dependency here is a design change,
+# not a packaging detail.
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/Quigleybits/agent-coop"
+Source = "https://github.com/Quigleybits/agent-coop"
+Issues = "https://github.com/Quigleybits/agent-coop/issues"
+Security = "https://github.com/Quigleybits/agent-coop/security/policy"
+Changelog = "https://github.com/Quigleybits/agent-coop/blob/main/CHANGELOG.md"
+
+[project.scripts]
+# Same `main()` that `python -m agent_coop` routes through
+# (agent_coop/__main__.py imports it from the same module). `python -m
+# agent_coop` is protocol surface: it must behave identically from an
+# installed wheel and from the checkout.
+coop = "agent_coop.cli:main"
+agent-coop = "agent_coop.cli:main"
+
+[tool.setuptools]
+# Explicit list, not auto-discovery: `coop.py` at the repo root is a checkout
+# alias and must stay OUT of the distribution, and `tests/` and `docs/` are not
+# runtime code.
+# The two adapter directories hold only SKILL.md data. They are listed so
+# setuptools stops warning that they look like unlisted namespace packages;
+# package-data below is what actually ships their files.
+packages = [
+    "agent_coop",
+    "agent_coop.adapters",
+    "agent_coop.adapters.claude",
+    "agent_coop.adapters.agents",
+]
+include-package-data = true
+
+[tool.setuptools.package-data]
+# Runtime data: schema creation plus standalone harness adapters that
+# `coop init --workspace` installs into the target repository.
+agent_coop = ["schema.sql", "adapters/*/SKILL.md"]

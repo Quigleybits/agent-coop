@@ -1,0 +1,3 @@
+# Normalise line endings in the repository and check out LF everywhere, so a
+# Windows clone, a Linux clone and the CI-built wheel carry byte-identical files.
+* text=auto eol=lf

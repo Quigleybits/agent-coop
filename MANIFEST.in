@@ -1,0 +1,5 @@
+include README.md LICENSE SECURITY.md CHANGELOG.md CONTRIBUTING.md
+include SKILL.md COOP_GUIDE.md coop.py coop-capabilities.example.json
+include docs/manual.md
+recursive-include agent_coop *.py *.sql *.md
+prune tests

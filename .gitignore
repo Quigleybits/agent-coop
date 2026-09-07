@@ -1,0 +1,18 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# packaging build artifacts
+build/
+dist/
+dist-tmp/
+*.egg-info/
+
+board.db
+board.db-wal
+board.db-shm
+inbox/
+receipts/
+.coop-auto-stop
+.coop-runs/
+coop-capabilities.local.json

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "capabilities": {
+    "browser_interactive": [
+      "browser"
+    ],
+    "knowledge_recall": [
+      "knowledge"
+    ]
+  },
+  "servers": {
+    "browser": {
+      "transport": "stdio",
+      "command": "REPLACE_WITH_BROWSER_MCP_COMMAND",
+      "args": [],
+      "env_from": [
+        "BROWSER_MCP_TOKEN"
+      ]
+    },
+    "knowledge": {
+      "transport": "http",
+      "url_from": "KNOWLEDGE_MCP_URL",
+      "bearer_token_from": "KNOWLEDGE_MCP_TOKEN"
+    }
+  }
+}
