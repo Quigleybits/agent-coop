@@ -30,16 +30,16 @@ jobs:
         run: |
           import json, subprocess
           run = json.loads(subprocess.check_output([
-              "gh", "api", "repos/Quigleybits/agent-coop/actions/runs/34141910286"
+              "gh", "api", "repos/Quigleybits/agent-coop/actions/runs/34149562202"
           ]))
-          assert run["head_sha"] == "48b4ca15c7fe3e2e9759009f88b8145576ce4a50"
+          assert run["head_sha"] == "b981ac596ff6d004eee020184e8bb6fe55a83d39"
           assert run["event"] == "push" and run["conclusion"] == "success"
 
       - name: Download the verified distributions
         uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
         with:
           name: agent-coop-windows-latest
-          run-id: 34141910286
+          run-id: 34149562202
           github-token: ${{ github.token }}
           path: dist
 
@@ -49,8 +49,8 @@ jobs:
           import hashlib
           from pathlib import Path
           expected = {
-              "agent_coop_cli-0.1.0-py3-none-any.whl": "4ff255cc7e88e18aea1a329809f25f7c2fc7f55e1b8ef14706afcbc92cdfb328",
-              "agent_coop_cli-0.1.0.tar.gz": "9526f656926120054f0e37ecd3c7b93157722ef2ba9f13e2044ed7d32702eee1",
+              "agent_coop_cli-0.1.0-py3-none-any.whl": "a5d1026f506c02bca2a380ad9dcde38a982db034ae201f4aaf991d1f01335016",
+              "agent_coop_cli-0.1.0.tar.gz": "5eed6d46b24c622eb335ecb1a8593678747f727d24b7c4ea3a38c2b6bbd33a3f",
           }
           files = list(Path("dist").iterdir())
           assert {p.name for p in files} == set(expected)
@@ -76,7 +76,7 @@ jobs:
         uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
         with:
           name: agent-coop-windows-latest
-          run-id: 34141910286
+          run-id: 34149562202
           github-token: ${{ github.token }}
           path: dist
 
@@ -86,8 +86,8 @@ jobs:
           import hashlib
           from pathlib import Path
           expected = {
-              "agent_coop_cli-0.1.0-py3-none-any.whl": "4ff255cc7e88e18aea1a329809f25f7c2fc7f55e1b8ef14706afcbc92cdfb328",
-              "agent_coop_cli-0.1.0.tar.gz": "9526f656926120054f0e37ecd3c7b93157722ef2ba9f13e2044ed7d32702eee1",
+              "agent_coop_cli-0.1.0-py3-none-any.whl": "a5d1026f506c02bca2a380ad9dcde38a982db034ae201f4aaf991d1f01335016",
+              "agent_coop_cli-0.1.0.tar.gz": "5eed6d46b24c622eb335ecb1a8593678747f727d24b7c4ea3a38c2b6bbd33a3f",
           }
           files = list(Path("dist").iterdir())
           assert {p.name for p in files} == set(expected)
