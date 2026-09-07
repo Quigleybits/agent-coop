@@ -190,4 +190,4 @@ vulnerability through the repository's [security policy](https://github.com/Quig
 
 ## License
 
-MIT. Copyright (c) 2026 Quigleybits. See [`LICENSE`](https://github.com/Quigleybits/agent-coop/blob/main/LICENSE).
+MIT. Copyright (c) 2026 quigleyBits. See [`LICENSE`](https://github.com/Quigleybits/agent-coop/blob/main/LICENSE).

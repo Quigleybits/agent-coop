@@ -12,7 +12,7 @@ readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
 requires-python = ">=3.10"
-authors = [{ name = "Quigleybits" }]
+authors = [{ name = "quigleyBits" }]
 keywords = ["agents", "coordination", "protocol", "multi-agent", "cli", "sqlite"]
 classifiers = [
     "Development Status :: 4 - Beta",
