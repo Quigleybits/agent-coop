@@ -109,8 +109,8 @@ jobs:
           import zipfile
 
           dist = pathlib.Path("dist")
-          wheels = sorted(dist.glob("agent_coop-*.whl"))
-          sdists = sorted(dist.glob("agent_coop-*.tar.gz"))
+          wheels = sorted(dist.glob("agent_coop_cli-*.whl"))
+          sdists = sorted(dist.glob("agent_coop_cli-*.tar.gz"))
           if len(wheels) != 1 or len(sdists) != 1:
               raise SystemExit(
                   f"expected one wheel and one sdist; got {wheels!r}, {sdists!r}"

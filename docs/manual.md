@@ -31,7 +31,7 @@ Autonomous turns receive a self-contained runner prompt instead of that file.
 | **Category** | Multi-agent **coordination protocol** / local coordination framework |
 | **One-liner** | Co-op is the **shared memory + rules of engagement between coding agents**. |
 | **Market-facing** | **Local multi-agent coordination protocol for terminal coding agents.** |
-| **Package** | `agent-coop` on PyPI · commands `coop` and `agent-coop` · module entrypoint `python -m agent_coop` |
+| **Package** | `agent-coop-cli` on PyPI · commands `coop` and `agent-coop` · module entrypoint `python -m agent_coop` |
 
 Agent Co-op is a local-first SQLite coordination protocol for supervised terminal coding
 agents. The reference providers are Claude Code, Codex and Grok. The product is the
@@ -303,16 +303,16 @@ user-level `inherit = "core"` policy cannot erase the session identity or select
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/), then:
 
 ```bash
-uv tool install agent-coop
+uv tool install agent-coop-cli
 ```
 
 uv creates an isolated tool environment and can download a suitable Python if needed.
 If you already use [pipx](https://pipx.pypa.io/stable/installation/),
-`pipx install agent-coop` is equally supported. Both install the same PyPI package.
+`pipx install agent-coop-cli` is equally supported. Both install the same PyPI package.
 
 If `coop` is not found, run `uv tool update-shell` (or `pipx ensurepath` for a pipx
-installation), then restart your terminal. Upgrade with `uv tool upgrade agent-coop`
-or `pipx upgrade agent-coop`, using the tool that installed it.
+installation), then restart your terminal. Upgrade with `uv tool upgrade agent-coop-cli`
+or `pipx upgrade agent-coop-cli`, using the tool that installed it.
 
 To test an unreleased commit, install from a clone:
 
@@ -370,7 +370,7 @@ login, a paid turn, or the full persistent-provider transport.
 One command to install, one action to run. Three entry points, same result:
 
 ```bash
-uv tool install agent-coop
+uv tool install agent-coop-cli
 cd your-repo
 coop "add a unit test for greet()"
 # created task #1 (draft) · runner: starting · watch with: coop
@@ -1007,7 +1007,7 @@ environment.
 | Foreign-harness session attach | built / tested | Ordinary join; not the autonomous acceptance path |
 | Harness-native entrypoints (Claude Code, Codex, Grok) | built / tested | Workspace init installs wheel resources. Every launch routes to `coop start`. |
 | Herdr mirror observability (`--herdr`) | built / tested | **Opt-in, unpromoted, default off** |
-| Packaging: `agent-coop` 0.1.0, console script `coop`, stdlib-only | built / tested | Wheel and sdist are built and installed in CI. |
+| Packaging: `agent-coop-cli` 0.1.0, console script `coop`, stdlib-only | built / tested | Wheel and sdist are built and installed in CI. |
 
 ---
 

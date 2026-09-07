@@ -1312,10 +1312,10 @@ def _sub_json(parser):
 
 
 def package_version() -> str:
-    """Installed `agent-coop` version; pyproject fallback for a checkout."""
+    """Installed `agent-coop-cli` version; pyproject fallback for a checkout."""
     try:
         from importlib import metadata
-        return metadata.version("agent-coop")
+        return metadata.version("agent-coop-cli")
     except Exception:
         pass
     # Checkout fallback (no tomllib on 3.10): read the version line only.

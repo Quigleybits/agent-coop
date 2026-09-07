@@ -49,8 +49,8 @@ jobs:
           import hashlib
           from pathlib import Path
           expected = {
-              "agent_coop-0.1.0-py3-none-any.whl": "4ff255cc7e88e18aea1a329809f25f7c2fc7f55e1b8ef14706afcbc92cdfb328",
-              "agent_coop-0.1.0.tar.gz": "9526f656926120054f0e37ecd3c7b93157722ef2ba9f13e2044ed7d32702eee1",
+              "agent_coop_cli-0.1.0-py3-none-any.whl": "4ff255cc7e88e18aea1a329809f25f7c2fc7f55e1b8ef14706afcbc92cdfb328",
+              "agent_coop_cli-0.1.0.tar.gz": "9526f656926120054f0e37ecd3c7b93157722ef2ba9f13e2044ed7d32702eee1",
           }
           files = list(Path("dist").iterdir())
           assert {p.name for p in files} == set(expected)
@@ -66,7 +66,7 @@ jobs:
     timeout-minutes: 10
     environment:
       name: pypi
-      url: https://pypi.org/project/agent-coop/
+      url: https://pypi.org/project/agent-coop-cli/
     permissions:
       contents: read
       actions: read
@@ -86,8 +86,8 @@ jobs:
           import hashlib
           from pathlib import Path
           expected = {
-              "agent_coop-0.1.0-py3-none-any.whl": "4ff255cc7e88e18aea1a329809f25f7c2fc7f55e1b8ef14706afcbc92cdfb328",
-              "agent_coop-0.1.0.tar.gz": "9526f656926120054f0e37ecd3c7b93157722ef2ba9f13e2044ed7d32702eee1",
+              "agent_coop_cli-0.1.0-py3-none-any.whl": "4ff255cc7e88e18aea1a329809f25f7c2fc7f55e1b8ef14706afcbc92cdfb328",
+              "agent_coop_cli-0.1.0.tar.gz": "9526f656926120054f0e37ecd3c7b93157722ef2ba9f13e2044ed7d32702eee1",
           }
           files = list(Path("dist").iterdir())
           assert {p.name for p in files} == set(expected)

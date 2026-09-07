@@ -24,12 +24,12 @@ in to each one before a real run:
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/), then install Co-op:
 
 ```bash
-uv tool install agent-coop
+uv tool install agent-coop-cli
 coop smoke --offline
 ```
 
 Already use [pipx](https://pipx.pypa.io/stable/installation/)?
-`pipx install agent-coop` is an equally supported alternative.
+`pipx install agent-coop-cli` is an equally supported alternative.
 
 `smoke --offline` checks Co-op in a private temporary directory. It makes no provider call
 and spends no provider quota. Run `coop smoke` to add executable preflight for the three
