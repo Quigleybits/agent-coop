@@ -189,7 +189,7 @@ jobs:
               else "bin/agent-coop"
           )
           subprocess.run(
-              [str(sdist_python), "-m", "pip", "install", "setuptools==82.0.1"],
+              [str(sdist_python), "-m", "pip", "install", "setuptools==83.0.0"],
               check=True,
           )
           subprocess.run(

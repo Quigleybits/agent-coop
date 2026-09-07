@@ -14,7 +14,7 @@ dependency floors:
 
 | Tool | Version |
 |---|---:|
-| setuptools | 82.0.1 |
+| setuptools | 83.0.0 |
 | pytest | 9.0.2 |
 | build | 1.3.0 |
 | twine | 7.0.0 |
@@ -24,7 +24,7 @@ Create an isolated environment. On Windows:
 ```powershell
 py -3.14 -m venv .venv
 .\.venv\Scripts\python -m pip install --upgrade pip
-.\.venv\Scripts\python -m pip install "setuptools==82.0.1" "pytest==9.0.2" "build==1.3.0" "twine==7.0.0"
+.\.venv\Scripts\python -m pip install "setuptools==83.0.0" "pytest==9.0.2" "build==1.3.0" "twine==7.0.0"
 .\.venv\Scripts\python -m pip install --no-build-isolation -e .
 ```
 
@@ -33,7 +33,7 @@ On Linux:
 ```bash
 python3.14 -m venv .venv
 .venv/bin/python -m pip install --upgrade pip
-.venv/bin/python -m pip install 'setuptools==82.0.1' 'pytest==9.0.2' 'build==1.3.0' 'twine==7.0.0'
+.venv/bin/python -m pip install 'setuptools==83.0.0' 'pytest==9.0.2' 'build==1.3.0' 'twine==7.0.0'
 .venv/bin/python -m pip install --no-build-isolation -e .
 ```
 
