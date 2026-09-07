@@ -1,7 +1,7 @@
 [build-system]
 # Pin the backend so wheel and sdist metadata are reproducible in CI.
-# Version 82.0.1 supports the PEP 639 license fields.
-requires = ["setuptools==82.0.1"]
+# Version 83.0.0 fixes Unicode normalization in source-archive exclusions.
+requires = ["setuptools==83.0.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
